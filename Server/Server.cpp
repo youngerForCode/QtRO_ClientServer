@@ -40,7 +40,11 @@ void MainWindow::init()
     m_pHost = new QRemoteObjectHost(this);
     m_pHost->setHostUrl(QUrl("local:interfaces"));
     m_pInterFace = new CommonInterface(this);
-    m_pHost->enableRemoting(m_pInterFace);
+#ifndef DYNAMIC_REPLICA
+    m_pHost->enableRemoting(m_pInterFace); // 静态 replica
+#else
+    m_pHost->enableRemoting(m_pInterFace, QStringLiteral("Interface1"));// 动态 replica
+#endif
     connect(m_pInterFace, &CommonInterface::sigReceiveMsg, this, &MainWindow::onReceiveMsg);
 }
 

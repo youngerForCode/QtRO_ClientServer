@@ -1,5 +1,6 @@
 #include "CommonInterface.h"
 #include <QDebug>
+#include<QImage>
 
 CommonInterface::CommonInterface(QObject *parent):
     CommonInterfaceSource(parent)
@@ -15,6 +16,7 @@ CommonInterface::CommonInterface(QObject *parent):
 void CommonInterface::onMessage(QString msg)
 {
     emit sigReceiveMsg(msg);
+
 }
 /**
  * @brief CommonInterface::sendMsg
@@ -25,3 +27,4 @@ void CommonInterface::sendMsg(const QString &msg)
 {
     emit sigMessage(msg);
 }
+

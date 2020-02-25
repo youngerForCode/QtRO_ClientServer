@@ -1,6 +1,6 @@
 #ifndef COMMONINTERFACE_H
 #define COMMONINTERFACE_H
-
+#include<QImage>
 #include "rep_CommonInterface_source.h"
 
 class CommonInterface : public CommonInterfaceSource
@@ -10,6 +10,7 @@ public:
     explicit CommonInterface(QObject *parent = nullptr);
     virtual void onMessage(QString msg) override;
     void sendMsg(const QString &msg);
+
 signals:
     void sigReceiveMsg(const QString &msg);
 };

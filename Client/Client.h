@@ -3,7 +3,13 @@
 
 #include <QMainWindow>
 #include <QRemoteObjectNode>
+
+#ifdef DYNAMIC_REPLICA
+#include <QRemoteObjectDynamicReplica>
+#else
 #include "rep_CommonInterface_replica.h"
+#endif
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Client; }
@@ -24,6 +30,15 @@ private:
     void init();
     Ui::Client *ui;
     QRemoteObjectNode *m_pRemoteNode = nullptr;
+
+#ifndef DYNAMIC_REPLICA
     CommonInterfaceReplica *m_pInterface = nullptr;
+#else
+    QRemoteObjectDynamicReplica *m_pInterface = nullptr;
+signals:
+    void sigSendMsg(QString msg);
+#endif
+
+
 };
 #endif // CLIENT_H
