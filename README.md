@@ -10,6 +10,6 @@
 	
 	
 # 参考资料
-- ![QtRO简介](https://zhuanlan.zhihu.com/p/36501814)
-- ![Qt Remote Object（QtRO）实现进程间通信](https://blog.csdn.net/luoyayun361/article/details/91588654)
-- ![Qt Remote Object（QtRO）动态Replica实现进程间通信](https://blog.csdn.net/luoyayun361/article/details/92205562)
+- [QtRO简介](https://zhuanlan.zhihu.com/p/36501814)
+- [Qt Remote Object（QtRO）实现进程间通信](https://blog.csdn.net/luoyayun361/article/details/91588654)
+- [Qt Remote Object（QtRO）动态Replica实现进程间通信](https://blog.csdn.net/luoyayun361/article/details/92205562)
